@@ -10,7 +10,7 @@ and i thought it's a good opportunity to publish it on github publicly so i made
 
 - [ ] Fast c++ engine
 - [x] Highlight legal moves
-- [x] Intuitive **Python + Pygame** GUI
+- [x] simple **Python + Pygame** GUI
 - [x] Legal move generation & validation (via `python-chess`)
 - [x] Highlighting for selected pieces and legal moves
 - [x] Clean visual design with piece images
