@@ -17,7 +17,7 @@ MOVE_DOT = (50, 50, 50)
 RED= (255, 0, 0)
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Polished Chess with Moves")
+pygame.display.set_caption("Chess UI")
 
 
 PIECES = {}
@@ -70,7 +70,7 @@ def get_square_under_mouse():
     row = my // SQUARE_SIZE
     return chess.square(col, 7 - row)
 
-
+dic={1:"White",0:"Black"}
 selected_square = None
 highlight_moves = []
 
@@ -83,7 +83,10 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-
+        if board.legal_moves.count()==0:
+            print(f"{dic[not board.turn]} chek mate's {dic[board.turn]}")
+            pygame.quit()
+            sys.exit()
         elif event.type == pygame.MOUSEBUTTONDOWN:
             square = get_square_under_mouse()
 
